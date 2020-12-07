@@ -22,7 +22,7 @@ int check_cycle(listint_t *head)
 
 	while (head && one_step && two_step)
 	{
-		if (head == one_step || head == two_step)
+		if (head == two_step)
 			return (1);
 
 		head = head->next;

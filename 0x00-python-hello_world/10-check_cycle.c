@@ -18,16 +18,19 @@ int check_cycle(listint_t *head)
 
 	two_step = head;
 	one_step = two_step->next;
-	two_step = one_step->next;
 
-	while (head && one_step && two_step)
+	if (one_step)
 	{
-		if (head == two_step)
-			return (1);
-
-		head = head->next;
-		one_step = two_step->next;
 		two_step = one_step->next;
+		while (head && one_step && two_step)
+		{
+			if (head == two_step)
+				return (1);
+
+			head = head->next;
+			one_step = two_step->next;
+			two_step = one_step->next;
+		}
 	}
 
 	return (0);

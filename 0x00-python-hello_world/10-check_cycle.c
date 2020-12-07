@@ -13,6 +13,9 @@ int check_cycle(listint_t *head)
 	listint_t *one_step = NULL;
 	listint_t *two_step = NULL;
 
+	if (head == NULL)
+		return (0);
+
 	two_step = head;
 	one_step = two_step->next;
 	two_step = one_step->next;

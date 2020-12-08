@@ -11,6 +11,7 @@ def print_last_digit(number):
         print("{:d}".format(ld), end='')
 
     elif number == 0:
+        ld == 0
         print(number, end='')
 
     return ld

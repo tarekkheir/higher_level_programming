@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 def print_last_digit(number):
-    ld = ""
+    ld = number % 10
 
     if number > 0:
-        ld = number % 10
         print("{:d}".format(ld), end='')
 
-    elif number < 0:
-        ld = (-number) % 10
+    elif ld != 0 and number < 0:
+        ld = 10 - ld
         print("{:d}".format(ld), end='')
 
     elif number == 0:

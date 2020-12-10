@@ -10,13 +10,13 @@ if __name__ == "__main__":
         c = int(sys.argv[3])
         print("{} {} {}".format(a, b, c), end=' ')
         if sys.argv[2] == '+':
-              print("= {}".format(calculator_1.add(a, c)))
+            print("= {}".format(calculator_1.add(a, c)))
         elif sys.argv[2] == '*':
-              print("= {}".format(calculator_1.mul(a, c)))
+            print("= {}".format(calculator_1.mul(a, c)))
         elif sys.argv[2] == '-':
-              print("= {}".format(calculator_1.sub(a, c)))
+            print("= {}".format(calculator_1.sub(a, c)))
         elif sys.argv[2] == '/':
-              print("= {}".format(calculator_1.div(a, c)))
+            print("= {}".format(calculator_1.div(a, c)))
         else:
             print("Unknown operator. Available operators: +, -, * and /")
             exit(1)

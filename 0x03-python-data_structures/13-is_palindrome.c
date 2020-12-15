@@ -13,6 +13,7 @@ int is_palindrome(listint_t **head)
 	int tab[512];
 	int i = 0;
 	int j = 0;
+	int tmp = 0;
 
 	if (*head == NULL)
 		return (1);
@@ -24,15 +25,14 @@ int is_palindrome(listint_t **head)
 		current = current->next;
 		i++;
 	}
+	tmp =i;
 	i--;
-	while (tab[i] != tab[j])
+	while (j != tmp && j != i)
 	{
+		if (tab[i] != tab[j])
+			return (0);
 		j++;
 		i--;
 	}
-
-	if (i < j)
-		return (0);
-	else
-		return (1);
+	return (1);
 }

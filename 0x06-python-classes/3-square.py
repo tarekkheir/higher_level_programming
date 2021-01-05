@@ -10,7 +10,7 @@ class Square:
 
     Attributes: size
     """
-    def __init__(self, size=None):
+    def __init__(self, size=0):
         """
         Square init: square parameters
         """
@@ -19,7 +19,7 @@ class Square:
         elif size < 0:
             raise ValueError("size must be >= 0")
         else:
-                self.__size = size
+            self.__size = size
 
     def area(self):
         """

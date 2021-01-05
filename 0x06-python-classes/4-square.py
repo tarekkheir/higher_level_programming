@@ -22,21 +22,21 @@ class Square:
             self.size = size
 
     def size(self):
-        return self.size
+        return self.__size
 
     def size(self, value):
         if isinstance(value, int) is not True:
             raise TypeError("size must be an integer")
-        elif size < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.size = value
+            self.__size = value
 
     def area(self):
         """
         Method return area
         """
-        if isinstance(self.size, int) is True:
-            return (self.size * self.size)
+        if isinstance(self.__size, int) is True:
+            return (self.__size * self.__size)
         else:
             raise TypeError("size must be an integer")

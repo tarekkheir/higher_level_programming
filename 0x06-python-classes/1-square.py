@@ -7,7 +7,7 @@ Square module - init two instances
 class Square:
     """
     Square class:
-    
+
     Attributes:
     size
     """

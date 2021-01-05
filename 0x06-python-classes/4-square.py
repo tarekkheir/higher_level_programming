@@ -10,7 +10,7 @@ class Square:
 
     Attributes: size
     """
-    def __init__(self, size=None):
+    def __init__(self, size=0):
         """
         Square init: square parameters
         """

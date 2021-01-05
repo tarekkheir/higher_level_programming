@@ -3,6 +3,7 @@
 Square module - empty module
 """
 
+
 class Square:
     """
     Empty class

@@ -35,7 +35,7 @@ class Square:
             return (self.size * self.size)
         else:
             raise TypeError("size must be an integer")
-    
+
     def my_print(self):
         if self.size is not 0:
             for i in range(self.size):

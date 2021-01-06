@@ -31,4 +31,8 @@ class Square:
         """
         Method return area
         """
-        return (self.size * self.size)
+        if isinstance(self.size, int) is True:
+            return (self.size * self.size)
+        else:
+            raise TypeError("size must be an integer")
+

@@ -61,10 +61,9 @@ class Square:
         Method set position
         """
         if isinstance(tuple, position):
-            if len(position) == 2:
-                if isinstance(int, position[0]):
-                    if isinstance(int, position[1]):                        
-                        self.position = value
+            if isinstance(int, position[0]):
+                if isinstance(int, position[1]):
+                    self.position = value
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
 

@@ -1,0 +1,46 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+
+#test 1: "import module"
+>>> add_integer = __import__('0-add_integer').add_integer
+
+#test 2: "two positive integer"
+>>> print(add_integer(1, 2))
+3
+
+#test 3: "1 positive and 1 negative integer"
+>>> print(add_integer(100, -2))
+98
+
+#test 4: "use only the first integer"
+>>> print(add_integer(2))
+100
+
+#test 5: "use 1 float and 1 negative integer"
+>>> print(add_integer(100.3, -2))
+98
+
+#test 6: "1 integer and 1 String"
+>>> print(add_integer(4, "School"))
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+#test 7: "push Nothing"
+>>> print(add_integer(None))
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+#test 8
+>>> print(add_integer("8d", 12))
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+#test 9
+>>> print(add_integer())

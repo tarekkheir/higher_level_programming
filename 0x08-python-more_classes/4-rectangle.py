@@ -54,7 +54,7 @@ class Rectangle:
         while i < self.height:
             self.str = self.str + ("#" * self.__width) + '\n'
             i += 1
-        return self.str
+        return self.str[:-1]
 
     def __repr__(self):
-        return "Rectangle({}, {})".format(self.width, self.height)
+        return "Rectangle({}, {})".format(self.__width, self.__height)

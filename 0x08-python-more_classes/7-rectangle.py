@@ -57,14 +57,14 @@ class Rectangle:
             return ""
         i = 0
         self.str = ""
-        while i < self.height:
+        while i < self.__height:
             self.str += str(self.print_symbol) * self.__width + '\n'
             i += 1
-        return self.str
+        return self.str[:-1]
 
     def __repr__(self):
         """representation of rectangle"""
-        return "Rectangle({}, {})".format(self.width, self.height)
+        return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
         """del actions"""

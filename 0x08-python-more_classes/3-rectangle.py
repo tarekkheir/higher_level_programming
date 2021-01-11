@@ -53,4 +53,4 @@ class Rectangle:
         while i < self.height:
             self.str = self.str + ("#" * self.__width) + '\n'
             i += 1
-        return self.str
+        return self.str[:-1]

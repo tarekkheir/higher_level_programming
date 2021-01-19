@@ -12,13 +12,13 @@ class MyInt(int):
         self.var = state
 
     def __ne__(self, other):
-        '''not equal method'''
+        """not equal method"""
         if self.a != other:
             return False
         return True
 
     def __eq__(self, other):
-        '''equal method'''
+        """equal method"""
         if self.a == other:
             return False
         return True

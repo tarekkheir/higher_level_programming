@@ -7,18 +7,14 @@ MyInt module - task 100
 class MyInt(int):
     """ Class MyInt """
 
-    def __init__(self, value):
+    def __init__(self, state):
         """ Init execute"""
-        self.var = value
+        self.var = state
 
-    def __eq__(self, other):
+    def __eq__(self, state):
         """ equal method"""
-        if self.var == other:
-            return False
-        return True
+        return self.state = other.state
 
-    def __ne__(self, other):
+    def __ne__(self, state):
         """ not equal method"""
-        if self.var != other:
-            return True
-        return False
+        return not self.__eq__(other)

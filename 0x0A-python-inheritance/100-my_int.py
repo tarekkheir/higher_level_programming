@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-MyInt module - task 12
+MyInt module - task 100
 """
 
 

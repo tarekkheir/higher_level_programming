@@ -11,14 +11,14 @@ class MyInt(int):
         """ Init execute"""
         self.var = value
 
-    def __ne__(self, other):
-        """ not equal method"""
-        if self.var != other:
-            return True
-        return False
-
     def __eq__(self, other):
         """ equal method"""
         if self.var == other:
             return False
         return True
+
+    def __ne__(self, other):
+        """ not equal method"""
+        if self.var != other:
+            return True
+        return False

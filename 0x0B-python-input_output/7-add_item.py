@@ -15,9 +15,8 @@ if __name__ == "__main__":
         __import__('6-load_from_json_file').load_from_json_file
 
     filename = "add_item.json"
-    f = open(filename, "w")
 
-    if os.path.getsize(filename) > 0:
+    if os.path.exists(filename):
 
         if len(sys.argv) > 1:
 

@@ -4,9 +4,6 @@ I/O module - task 9
 """
 
 
-import json
-
-
 class Student:
     """
     Student class.

@@ -24,5 +24,5 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         for i in range(1, len(sys.argv)):
             data.append(sys.argv[i])
-    
+
     save_to_json_file(data, filename)

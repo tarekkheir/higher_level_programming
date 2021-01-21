@@ -15,7 +15,7 @@ if __name__ == "__main__":
         __import__('6-load_from_json_file').load_from_json_file
 
     filename = "add_item.json"
-    fp = open(filename, "r+")
+    f = open(filename, "w")
 
     if os.path.getsize(filename) > 0:
 
@@ -29,4 +29,4 @@ if __name__ == "__main__":
         new_list = []
         save_to_json_file(new_list, filename)
 
-    fp.close()
+    f.close()

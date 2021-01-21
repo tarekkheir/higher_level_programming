@@ -9,7 +9,7 @@ def factoriel(n):
         return 1
     else:
         nb = 1
-        for i in range(2,n+1):
+        for i in range(2, n+1):
             nb = nb * i
         return nb
 

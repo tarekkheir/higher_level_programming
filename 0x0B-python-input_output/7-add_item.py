@@ -19,12 +19,17 @@ if __name__ == "__main__":
 
     if os.path.exists(filename):
 
-        if len(sys.argv) > 1:
+        try:
             data = load_from_json_file(filename)
-            for i in range(1, len(sys.argv)):
-                data.append(sys.argv[i])
+        except:
+            data = []
     else:
         data = []
+
+    if len(sys.argv) > 1:
+        for i in range(1, len(sys.argv)):
+            data.append(sys.argv[i])
+    
     save_to_json_file(data, filename)
 
     f.close()

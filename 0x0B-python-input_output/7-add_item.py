@@ -26,5 +26,3 @@ if __name__ == "__main__":
             data.append(sys.argv[i])
     
     save_to_json_file(data, filename)
-
-    f.close()

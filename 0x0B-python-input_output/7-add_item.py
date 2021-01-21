@@ -15,18 +15,16 @@ if __name__ == "__main__":
         __import__('6-load_from_json_file').load_from_json_file
 
     filename = "add_item.json"
+    f = open(filename, "r+")
 
     if os.path.exists(filename):
 
-        try:
-            if len(sys.argv) > 1:
-                data = load_from_json_file(filename)
-                for i in range(1, len(sys.argv)):
-                    data.append(sys.argv[i])
-        except:
-            data = []
+        if len(sys.argv) > 1:
+            data = load_from_json_file(filename)
+            for i in range(1, len(sys.argv)):
+                data.append(sys.argv[i])
     else:
-        new_list = []
+        data = []
     save_to_json_file(data, filename)
 
     f.close()

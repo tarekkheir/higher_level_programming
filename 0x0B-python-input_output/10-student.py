@@ -19,7 +19,7 @@ class Student:
         """Returns dictionary description of the instance"""
         if attrs is not None:
             new = {}
-            for key, value in self.__dict__:
+            for key, value in self.__dict__.items():
                 if key in attrs:
                     new[key] = value
             return new

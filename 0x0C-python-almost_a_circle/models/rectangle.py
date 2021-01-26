@@ -6,17 +6,21 @@ Rectangle module
 
 from models.base import Base
 
-class Rectangle(Base):
 
+class Rectangle(Base):
+    """
+    class Rectangle inherit from Base
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
+        """init execution"""
         super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-    
+
     def check_type(attr, value):
-        
+        """check type of attribute"""
         a = ["width", "height"]
         b = ["x", "y"]
 
@@ -26,7 +30,6 @@ class Rectangle(Base):
             raise ValueError("{} must be > 0".format(attr))
         if attr in b and value < 0:
             raise ValueError("{} must be >= 0".format(attr))
-
 
     def area(self):
         return self.width * self.height
@@ -48,41 +51,51 @@ class Rectangle(Base):
         elif kwargs is not None:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-    
+
     def to_dictionary(self):
-        new_dict = {"width": self.__width, "height": self.__height, "x": self._x, "y": self._y, "id": self.id}
+
+        new_dict = {
+            "width": self.__width, "height": self.__height,
+            "x": self._x, "y": self._y, "id": self.id
+            }
         return new_dict
 
     def __str__(self):
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}"\
+            .format(self.id, self.x, self.y, self.__width, self.__height)
 
     @property
     def width(self):
         return self.__width
+
     @property
     def height(self):
         return self.__height
+
     @property
     def x(self):
         return self._x
+
     @property
     def y(self):
         return self._y
-    
+
     @width.setter
     def width(self, value):
         Rectangle.check_type("width", value)
         self.__width = value
+
     @height.setter
     def height(self, value):
         Rectangle.check_type("height", value)
         self.__height = value
+
     @x.setter
     def x(self, value):
         Rectangle.check_type("x", value)
         self._x = value
+
     @y.setter
     def y(self, value):
         Rectangle.check_type("y", value)
         self._y = value
-

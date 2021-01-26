@@ -13,6 +13,7 @@ Rectangle class
 class Rectangle(Base):
     """
     class Rectangle inherit from Base
+    attributes: __width, __height, x and y
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """init execution"""

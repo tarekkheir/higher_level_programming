@@ -33,9 +33,9 @@ class Rectangle(Base):
 
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(attr))
-        for attr in a and value < 0:
+        if attr in a and value <= 0:
             raise ValueError("{} must be > 0".format(attr))
-        for attr in b and value < 0:
+        if attr in b and value < 0:
             raise ValueError("{} must be >= 0".format(attr))
 
     def area(self):
@@ -97,23 +97,23 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """set width"""
-        check_type("width", value)
+        Rectangle.check_type("width", value)
         self.__width = value
 
     @height.setter
     def height(self, value):
         """set height"""
-        check_type("height", value)
+        Rectangle.check_type("height", value)
         self.__height = value
 
     @x.setter
     def x(self, value):
         """set x"""
-        check_type("x", value)
+        Rectangle.check_type("x", value)
         self._x = value
 
     @y.setter
     def y(self, value):
         """set y"""
-        check_type("y", value)
+        Rectangle.check_type("y", value)
         self._y = value

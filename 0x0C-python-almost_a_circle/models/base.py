@@ -41,8 +41,9 @@ class Base:
         new_list = []
         filename = "{}.json".format(cls.__name__)
 
-        for i in list_objs:
-            new_list.append(i.to_dictionary())
+        if list_objs:
+            for i in list_objs:
+                new_list.append(i.to_dictionary())
 
         data = cls.to_json_string(new_list)
 

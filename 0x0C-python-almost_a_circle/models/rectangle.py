@@ -36,9 +36,11 @@ class Rectangle(Base):
             raise ValueError("{} must be >= 0".format(attr))
 
     def area(self):
+        """return area of rectangle"""
         return self.width * self.height
 
     def display(self):
+        """display rectangle with #"""
         for i in range(self.x):
             print()
         for i in range(0, self.height):
@@ -46,7 +48,7 @@ class Rectangle(Base):
             print("#" * self.width)
 
     def update(self, *args, **kwargs):
-
+        """updtae rectangle with attributes"""
         attr = ["id", "width", "height", "x", "y"]
         if len(args) != 0:
             for i in range(0, len(args)):
@@ -57,7 +59,7 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-
+        """return dictionnary"""
         new_dict = {
             "width": self.__width, "height": self.__height,
             "x": self._x, "y": self._y, "id": self.id
@@ -71,36 +73,44 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """get width"""
         return self.__width
 
     @property
     def height(self):
+        """get height"""
         return self.__height
 
     @property
     def x(self):
+        """get x"""
         return self._x
 
     @property
     def y(self):
+        """get y"""
         return self._y
 
     @width.setter
     def width(self, value):
+        """set width"""
         Rectangle.check_type("width", value)
         self.__width = value
 
     @height.setter
     def height(self, value):
+        """set height"""
         Rectangle.check_type("height", value)
         self.__height = value
 
     @x.setter
     def x(self, value):
+        """set x"""
         Rectangle.check_type("x", value)
         self._x = value
 
     @y.setter
     def y(self, value):
+        """set y"""
         Rectangle.check_type("y", value)
         self._y = value

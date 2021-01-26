@@ -43,10 +43,10 @@ class Rectangle(Base):
 
     def display(self):
         """display rectangle with #"""
-        for i in range(self.x):
+        for i in range(self.y):
             print()
         for i in range(0, self.height):
-            print(" " * self.y, end='')
+            print(" " * self.x, end='')
             print("#" * self.width)
 
     def update(self, *args, **kwargs):

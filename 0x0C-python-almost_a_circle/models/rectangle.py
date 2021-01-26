@@ -25,6 +25,19 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def check_type(attr, value):
+        """ check type of attributes"""
+
+        a = ["width", "height"]
+        b = ["x", "y"]
+
+        if not isinstance(value, int):
+            raise TypeError("{} must be an integer".format(attr))
+        for attr in a and value < 0:
+            raise ValueError("{} must be > 0".format(attr))
+        for attr in b and value < 0:
+            raise ValueError("{} must be >= 0".format(attr))
+
     def area(self):
         """return area of rectangle"""
         return self.width * self.height
@@ -84,35 +97,23 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """set width"""
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        if value < 0:
-            raise ValueError("width must be >= 0")
+        check_type("width", value)
         self.__width = value
 
     @height.setter
     def height(self, value):
         """set height"""
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        if value < 0:
-            raise ValueError("height must be >= 0")
+        check_type("height", value)
         self.__height = value
 
     @x.setter
     def x(self, value):
         """set x"""
-        if not isinstance(value, int):
-            raise TypeError("x must be an integer")
-        if value <= 0:
-            raise ValueError("x must be >= 0")
+        check_type("x", value)
         self._x = value
 
     @y.setter
     def y(self, value):
         """set y"""
-        if not isinstance(value, int):
-            raise TypeError("y must be an integer")
-        if value <= 0:
-            raise ValueError("y must be >= 0")
+        check_type("y", value)
         self._y = value

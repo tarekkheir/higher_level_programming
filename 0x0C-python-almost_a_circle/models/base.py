@@ -44,8 +44,9 @@ class Base:
         for i in list_objs:
             new_list.append(i.to_dictionary())
 
-        data = cls.to_json_string(new_list)
-
+        if list_objs != []:
+            data = cls.to_json_string(new_list)
+        
         with open(filename, "w") as fp:
             fp.write(data)
 

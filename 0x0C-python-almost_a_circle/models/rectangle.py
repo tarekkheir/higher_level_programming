@@ -10,6 +10,8 @@ from models.base import Base
 """
 Rectangle class
 """
+
+
 class Rectangle(Base):
     """
     class Rectangle inherit from Base

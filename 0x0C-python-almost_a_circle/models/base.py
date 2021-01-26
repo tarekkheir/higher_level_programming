@@ -15,11 +15,11 @@ class Base:
 
     def __init__(self, id=None):
         """ init execution"""
-        if id is not None and isinstance(id, int):
-            self.id = id
-        else:
+        if id None:
             Base.__nb_objects += 1
             self.id = self.__nb_objects
+        else:
+            self.id = id
 
     @staticmethod
     def to_json_string(list_dictionaries):

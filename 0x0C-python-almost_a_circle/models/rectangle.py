@@ -38,11 +38,16 @@ class Rectangle(Base):
             print(" " * self.y, end='')
             print("#" * self.width)
 
-    def update(self, *args):
-        """
-        empty
-        """
-        pass
+    def update(self, *args, **kwargs):
+
+        attr = ["id", "width", "height", "x", "y"]
+        if len(args) != 0:
+            for i in range(0, len(args)):
+                setattr(self, attr[i], args[i])
+
+        elif kwargs is not None:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
     
     def to_dictionary(self):
         new_dict = {"width": self.__width, "height": self.__height, "x": self._x, "y": self._y, "id": self.id}

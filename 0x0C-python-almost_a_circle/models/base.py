@@ -35,7 +35,7 @@ class Base:
             json_string = []
         return json.loads(json_string)
 
-    @staticmethod
+    @classmethod
     def save_to_file(cls, list_objs):
 
         new_list = []
@@ -52,7 +52,7 @@ class Base:
         with open(filename, "w") as fp:
             fp.write(data)
 
-    @staticmethod
+    @classmethod
     def create(cls, **dictionary):
 
         if cls.__name__ == "Rectangle":
@@ -64,7 +64,7 @@ class Base:
 
         return new
 
-    @staticmethod
+    @classmethod
     def load_from_file(cls):
 
         filename = "{}.json".format(cls.__name__)

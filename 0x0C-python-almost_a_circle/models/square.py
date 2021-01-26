@@ -59,8 +59,8 @@ class Square(Rectangle):
 
     def display(self):
         """display square with #"""
-        for i in range(self.x):
+        for i in range(self.y):
             print()
         for i in range(0, self.size):
-            print(" " * self.y, end='')
+            print(" " * self.x, end='')
             print("#" * self.size)

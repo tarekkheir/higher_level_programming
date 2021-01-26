@@ -64,6 +64,7 @@ class Rectangle(Base):
         return new_dict
 
     def __str__(self):
+        """return str of rectangle class"""
         return "[Rectangle] ({}) {}/{} - {}/{}"\
             .format(self.id, self.x, self.y, self.__width, self.__height)
 

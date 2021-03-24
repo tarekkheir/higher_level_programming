@@ -6,5 +6,5 @@ if (n === 3 && isNaN(parseInt(process.argv[2], 10))) {
     console.log('C is fun');
   }
 } else {
-  console.log('Missing number of occurences');
+  console.log('Missing number of occurrences');
 }

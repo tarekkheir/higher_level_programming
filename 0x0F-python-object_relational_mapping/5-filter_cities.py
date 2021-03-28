@@ -18,11 +18,12 @@ if __name__ == "__main__":
     db = MySQLdb.connect(user=user_name, host="localhost",
                          passwd=password, db=database_name, port=3306)
     copy = db.cursor()
-    copy.execute("""SELECT cities.name WHERE states.name='%s'""" % match_name)
+    copy.execute("""SELECT cities.name FROM cities
+    LEFT JOIN states ON states.id = cities.state_id
+    WHERE states.name = '%s' ORDER BY cities.id""" % match_name)
     datas = copy.fetchall()
 
-    for data in datas:
-        print(data)
+    print(", ".join([data[0] for data in datas]))
 
     copy.close()
     db.close()

@@ -19,7 +19,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(user=user_name, host="localhost",
                          passwd=password, db=database_name, port=3306)
     copy = db.cursor()
-    copy.execute("""SELECT * FROM states WHERE name='%s'
+    copy.execute("""SELECT * FROM states WHERE name LIKE BINARY '%s'
     ORDER BY id""" % match_name)
     datas = copy.fetchall()
 

@@ -16,7 +16,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(user=user_name, host="localhost",
                          passwd=password, db=database_name, port=3306)
     copy = db.cursor()
-    copy.execute("""ELECT cities.id, cities.name, states.name FROM cities
+    copy.execute("""SELECT cities.id, cities.name, states.name FROM cities
     LEFT JOIN states ON states.id = cities.state_id
     ORDER BY cities.id""")
     datas = copy.fetchall()

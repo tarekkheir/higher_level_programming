@@ -11,9 +11,11 @@ def main():
     password = sys.argv[2]
     database_name = sys.argv[3]
 
-    db = MySQLdb.connect(user=user_name, host="localhost", passwd=password, db=database_name, port=3306)
+    db = MySQLdb.connect(user=user_name, host="localhost",
+                         passwd=password, db=database_name, port=3306)
+
     copy = db.cursor()
-    copy.execute("""SELECT * FROM states""")
+    copy.execute("""SELECT * FROM states ORDER BY id""")
     datas = copy.fetchall()
 
     for data in datas:
@@ -21,6 +23,7 @@ def main():
 
     copy.close()
     db.close()
+
 
 if __name__ == "__main__":
     main()

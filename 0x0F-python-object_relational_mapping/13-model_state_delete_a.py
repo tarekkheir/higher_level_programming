@@ -26,7 +26,7 @@ if __name__ == "__main__":
     session = Session()
 
     datas = session.query(State).filter(State.name.like('%a%')).all()
-    
+
     for data in datas:
         session.delete(data)
 

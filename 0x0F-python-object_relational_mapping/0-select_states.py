@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 
-if __name__ == "__main__":
+import MySQLdb
+import sys
 
-    import MySQLdb
-    import sys
-
+def main():
     user_name = sys.argv[1]
     password = sys.argv[2]
     database_name = sys.argv[3]
@@ -19,3 +18,6 @@ if __name__ == "__main__":
 
     copy.close()
     db.close()
+
+if __name__ == "__main__":
+    main()

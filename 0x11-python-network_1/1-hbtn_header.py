@@ -11,6 +11,5 @@ import urllib.request
 if __name__ == "__main__":
 
     with urllib.request.urlopen(sys.argv[1]) as response:
-        html = response.read()
         infos = dict(response.info())
         print(infos['X-Request-Id'])

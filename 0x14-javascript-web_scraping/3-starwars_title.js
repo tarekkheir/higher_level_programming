@@ -6,6 +6,6 @@ const url = 'https://swapi-api.hbtn.io/api/films/'.concat(process.argv[2]);
 
 request.get(url, function (error, response, body) {
   if (error) return console.log(error);
-  const json = JSON.parse(body)
+  const json = JSON.parse(body);
   console.log(json.title);
 });

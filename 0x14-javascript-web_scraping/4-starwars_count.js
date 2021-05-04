@@ -4,7 +4,7 @@
 const request = require('request');
 
 const url = process.argv[2];
-const char = 'https://swapi-api.hbtn.io/api/people/18/';
+const id = '18';
 let nb = 0;
 
 request.get(url, function (error, response, body) {
@@ -12,7 +12,7 @@ request.get(url, function (error, response, body) {
   const json = JSON.parse(body).results;
   for (const film of json) {
     for (const character of film.characters) {
-      if (character === char) {
+      if (character.includes(id)) {
         nb++;
       }
     }
